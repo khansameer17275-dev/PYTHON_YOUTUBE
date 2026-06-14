@@ -1350,3 +1350,56 @@ b = 12
 
 # Animal().sound()  # call method
 
+# ----OBJECTS----
+
+#       -------------
+#       |Bag Factory|
+#       -------------
+#             |
+#             |
+#       -------------
+#       |Requirement |
+#       -------------
+#       |     |      |
+#       |     |      |
+# (material) (Zips) (Pockets)
+
+# for understanding the objects first look at this example you have a bag factory
+# and that factory requires material of the bag. number of zips you need in that bag and number of pockets you need in your bag.
+# So this is kind of a blueprint and using this blueprint reebok, campus and some other companies provided their requirement and created their bags.
+# thus these companies became objects who created their bags using the blueprint.
+
+# class Factory:
+#      a = 12 # attribute class ke andar bana hai
+
+#      def hello(self): #method
+#          print("how are you")
+
+# obj = Factory() # ye jo class thi iska acess object ko milgaya.
+
+# obj2 = Factory()
+
+# obj3 = Factory()
+
+# ----CONSTRUCTOR----
+
+# you saw last example where we wanted material. zips and pockets from the user to create an object.
+
+# If we talk about a function we can ask the user using parameters but in class we can't have parameters for that we use constructor.
+
+# A constructor is a method that runs automatically when we call a class and this constructor function will target the objects location
+
+# Constructor ke through aap samne wale se cheeze mang sakte ho.
+class Factory:
+     a = 12 # attribute class ke andar bana hai
+
+     def hello(self): #method
+         print("how are you")
+
+obj = Factory() # ye jo class thi iska acess object ko milgaya.
+
+obj2 = Factory()
+
+obj3 = Factory()
+
+
