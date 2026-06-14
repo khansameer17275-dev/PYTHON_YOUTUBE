@@ -1279,4 +1279,74 @@ b = 12
 #     content = f.read()
 #     print(content)
 
+# What is OOPS ?
+
+# And our next approach is object oriented programming approach.
+
+# class Addition:
+#       def __init__(self, a, b):
+#           print(a + b)
+
+# obj = Addition(12, 12)
+
+# OOPS (Object-oriented programming system) is a programming paradigm based on the concept of "objects",
+#   which can contain data (attributes) and code (methods).
+
+# I know it is tough to understand right now but it will be easy after learning there are many concepts that we have to learn like classes,objects,encapsulation,inheritance,polymorphism, etc. So lets start.
+
+# apan ne padha imperitive approach
+
+# a = 12
+# b = 12
+# print(a + b)
+
+# uske baad 2nd approach padhi functional approach
+
+# def addition(a, b):
+#     return a + b
+
+# print(addition(12, 12))# isme ek baar assign krdo baar baar code ni likhna padta.
+# print(addition(45, 45))
+
+# ab oops approach padhenge.
+# ye bank management me kaam aata hai.
+
+# -----CLASS-----
+
+# A class is like a blueprint or template for creating objects.
+# Thinks of a class like the blueprint of a house. it defines what the house should have (rooms, windows, etc.) but doesn't build the house. An object is the actual house built using that blueprint.
+
+# syntax
+# class Car:
+#     brand = "Toyota" 
+
+# A class is also created with a basic keyword class and a name in front of it.
+# Creating a class is super simple now lets see what is inside class.There are 2 types of things inside class attributes and methods.
+ # Attributes-variables defined inside the class are Attribute.
+ # Methods- Functions defined inside a class are Methods.
+
+# class Factory:
+#     a = 12 # attribute class ke andar bana hai
+
+#     def hello(self): #method
+#         print("how are you")
+
+#     print("hello how are you i am getting initialized")
+        
+# print(Factory().a)
+
+# Factory().hello()
+
+# New class create
+
+# class Animal:
+#     type = "Cat" # attribute class ke andar bana hai
+
+#     def sound(self): #method
+#         print("Meow")
+
+# Directly accessing attribute and method using the class
+# print(Animal().type) # Access attribute
+
+# Animal().sound()  # call method
 
