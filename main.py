@@ -1545,17 +1545,115 @@ b = 12
 # person1.show()
 # animal1.show()
 
-class Parent:
-    def __init__(self, name):
-        self.name = name
+# class Parent:
+#     def __init__(self, name): # init constructor function
+#         self.name = name
 
-class Child(Parent):
-    def display(self):
-        print(f"my name is {self.name}")
+# class Child(Parent):
+#     def display(self):
+#         print(f"my name is {self.name}")
 
-child1 = Child("ayan")
+# child1 = Child("ayan")
 
-child1.display()
+# child1.display()
 
 
-    
+# class Animal:
+#    def __init__(self, name):
+#          self.name = name
+
+#    def show(self):
+#          print(f"hello your name is {self.name}")
+
+
+# class Human(Animal):
+#    def __init__(self, name, age):
+#       super().__init__(name)
+#       self.age = age
+
+#    def show(self):
+#        print(f"hello your name is {self.name}, and your age is {self.age}")  
+
+
+# animal1 = Animal("LION") # this is an instances of main class
+# person1 = Human("sameer",23) # this is an instances of child class.
+
+# person1.show()
+# Now lets say you need a new parameter in your child class you have to create a constructor function for your child class but the parameter that can be initialized in the parent class
+# will be initialized using the super() function. Suoer function will target the parent class.
+
+#---Types Of Inheritance---
+
+# *--Single inheritance--
+# All the inheritance we saw above was sinhgle level.
+# abhi tak jitne kie wo single hai.
+
+# Multiple inheritance 
+# multiple inheritance means there will be 2 parent class and only 1 child class and the child class will inherit all the attribute and methods of both parents.
+
+# class Animal:
+#    name1 = "Lion"
+
+# class Human:
+#    name2 = "harsh"
+
+# class Robots(Animal,Human):
+#    name3 = "charli123"
+
+# obj = Robots() # this is the example of multiple inheritance
+
+# print(obj.name3)
+
+# Example
+
+# class Animal:
+#    def __init__(self,animal):
+#      pass
+
+# class Human:
+#    def __init__(self,name,age):
+#      pass
+
+# class Robots(Human,Animal):
+#    name3 = "charli123"
+
+# obj = Robots()
+
+# print(obj.name3)
+
+# NOTE- The constructor function will be inherited of the first class that has been inherited. This is MRO(Moethod Resolution order) followed by python.
+
+#-----MULTILEVEL INHERITENCE-----
+
+# This is a basic case where we will have
+# * grandparent class--parent class -child class 
+# The attribute and methods are passed on through all the classes.
+# class Grandparent:
+#     def heritage(self):
+#         print("Heritage from Grandparent")
+
+# class Parent(Grandparent):
+#     pass
+
+# class Child(Parent):
+#     pass
+
+# class Factory:
+#     def __init__(self,material,zips):
+#         self.material = material
+#         self.zips = zips
+
+# class BhopalFactory(Factory):
+#     def __init__(self, material, zips,color):
+#         super().__init__(material, zips)
+#         self.color = color
+
+# class PuneFactory(BhopalFactory):
+#     def __init__(self, material, zips, color,pockets):
+#         super().__init__(material, zips, self.color)
+#         self.pockets = pockets'
+
+# this is multilevel inheritance
+
+# Hierarchical inheritance
+# ek class rahegi aur uske do child honge.
