@@ -1383,23 +1383,179 @@ b = 12
 
 # ----CONSTRUCTOR----
 
+# Constructor hota hai parameters magne ke lie.
+
 # you saw last example where we wanted material. zips and pockets from the user to create an object.
 
 # If we talk about a function we can ask the user using parameters but in class we can't have parameters for that we use constructor.
 
 # A constructor is a method that runs automatically when we call a class and this constructor function will target the objects location
 
+# class Student:
+#    def __init__(self, name):
+#       self.name = name #instance attribute
+
+# # Creating an object with a value
+# s = Student("Sameer")
+
+# Accepting the attribute
+# print(s.name)
 # Constructor ke through aap samne wale se cheeze mang sakte ho.
-class Factory:
-     a = 12 # attribute class ke andar bana hai
+# class Factory:
+#    def __init__(self,material,zips,pockets):
+#       self.material = material
+#       self.zips = zips
+#       self.pockets = pockets
 
-     def hello(self): #method
-         print("how are you")
+#    def show(self):
+#        print(f"your object detail are {self.material}, {self.pockets},{self.zips} ")
 
-obj = Factory() # ye jo class thi iska acess object ko milgaya.
+# reebok = Factory("leather",3,2) #object create kia
 
-obj2 = Factory()
+# campus = Factory("nylon",3,3) # object hai 
 
-obj3 = Factory()
+# print(campus.pockets) # is tarike se print krdenge.
+
+# reebok.show()
+
+# -----ATTRIBUTES AND METHODS-----
+
+# * Class attribute- A normal variable created inside a class is a class attribute and thats it.
+# Attributes are just variables define  inside a class and those are attribute
+
+# *Instance attribute- A attribute created using an instance like self.name,self.age etc. it is known as instance attribute.
+# Apke object ki koi location usko instance bolte hai self ke sath 
+
+# class Animal:
+#     name ="Lion" #classs attribute
+
+#     def __init__(self):
+#         self.age = age # instances attribute 
+
+# Types of Methods
+
+# *Instances Method-An instance method works with instance(object) of the class. This method can acess and modify instance attribute.
+
+# class MyClass:
+#     def instance_method(self):
+#         print("This is an instance method") # isi ko instance method kahte hai.
+
+# class Animal:
+#    name ="Lion" #classs attribute
+
+#    def __init__(self,age):
+#       self.age = age #instance attribute
+
+#    def show(self): # instance method
+#       print("how are you")
+
+# Class Method-
+
+# This method works with the class itself it will not target the instance (object). we have to use @classmethod decorator for creating the class method and it takes cls as their first parameter.
+# class MyClass:
+#     @classmethod
+#     def class_method(cls):
+#         print("This is a class method")
+
+# class Animal:
+#      name ="Lion" #classs attribute
+
+#      def __init__(self,age):
+#         self.age = age 
+
+#      def show(self): # instance method
+#        print("how are you your age is {self.age}")
+
+#      @classmethod
+#      def hello(cls):
+#          print("how are you brother")
+
+#------Static Method------
+
+# This method doesn't access class or instance directly it also uses a decorator @staticmethod it just acts like a regular function placed inside a class.
+
+# class MyClass:
+#     @staticmethod # static method
+#     def static_method():
+#         print("This is a static method")
+
+# @staticmethod
+# def static():
+#     print("how are you")
+
+# obj = Animal(12)
+
+# obj.hello()
+
+#----There are four pillars of oop
+
+# 1--INHERITANCE---
+
+# in general terms inheritance means properly or any possesion that comes to an heir.
+# in python inheritance  work between classes inheritance allows a child class to inherit properties and behavior from another class parent class and child class inherit parent class.
+# benefits of using inheritance is:
+# Code Reusability
+# organized structure
+# Easy to maintain and extend.
+
+# Syntax of inheritance
+
+# class Factorymumbai: # parent class / superclass
+#     a = 12
+#     def hello(self):
+#         print("hello i am a method mentioned inside Factory")
+
+# class Factorypune(Factorymumbai): # Child class/subclass
+#     pass
+
+# obj = Factorymumbai()
+
+# obj2 = Factorypune()
+
+# print(obj.a)
+
+# print(obj2.hello())
+
+# Now the inherited class has all the powers of parent class that means all the methods.attributes can accessed by the instance of child class as well.
+# class Parent:
+#    def speak(self):
+#        print("I can speak!")
+
+# class Child(Parent):
+#     pass
+
+#---Constructor in inheritance---
+
+# ---Example---
+
+# class Animal:
+#     def __init__(self,name):
+#         self.name = name
+
+#     def show(self):
+#      print(f"hello your name is {self.name}")
+
+# class Human(Animal):
+#     pass
 
 
+# animal1 = Animal("LION") # this is an instances of main class
+# person1 = Human("sameer") # this is an instances of child class.
+
+# person1.show()
+# animal1.show()
+
+class Parent:
+    def __init__(self, name):
+        self.name = name
+
+class Child(Parent):
+    def display(self):
+        print(f"my name is {self.name}")
+
+child1 = Child("ayan")
+
+child1.display()
+
+
+    
