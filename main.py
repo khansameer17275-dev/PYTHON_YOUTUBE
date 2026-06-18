@@ -1491,6 +1491,12 @@ b = 12
 
 # 1--INHERITANCE---
 
+# Python inheritance ek OOP (Object-Oriented Programming) concept hai jismein ek naya class (child ya derived class) existing class (parent ya base class) ke saare methods aur properties 
+# ko inherit karta hai.  Iska main fayda code reusability hai, jisse aapko same logic ko baar-baar likhne ki zarurat nahi padti. 
+
+# Syntax simple hai: class ChildClass(ParentClass):. Isme aap parent ki functionality reuse kar sakte hain, ya usme method overriding karke behavior customize kar sakte hain. 
+# Python mein single inheritance (ek parent) aur multiple inheritance (ek se zyada parents) dono supported hain. 
+
 # in general terms inheritance means properly or any possesion that comes to an heir.
 # in python inheritance  work between classes inheritance allows a child class to inherit properties and behavior from another class parent class and child class inherit parent class.
 # benefits of using inheritance is:
@@ -1525,6 +1531,13 @@ b = 12
 #     pass
 
 #---Constructor in inheritance---
+
+# Python mein inheritance ke dauran, agar child class ka apna constructor (__init__) nahi hota, 
+# toh parent class ka constructor automatically call ho jata hai.  Lekin, agar child class mein apna __init__ define kiya gaya hai,
+#  toh parent ka constructor automatically call nahi hota. 
+
+# Isse handle karne ke liye aapko child class ke constructor ke andar explicitly parent constructor 
+# ko call karna padta hai.  Iske do main tareeke hain:
 
 # ---Example---
 
@@ -1657,3 +1670,254 @@ b = 12
 
 # Hierarchical inheritance
 # ek class rahegi aur uske do child honge.
+
+# ----POLYMORPISM----
+
+# Polymorphism is a core concept in Object-oriented programming(OOP),The word means "many forms" --and in programming.it allows the same interface or method
+# name to behave differently depending on the object or context.
+
+# Types of Polymorphism
+
+# Python mein polymorphism ka matlab hai "bahut se roop" (many forms).  Ye Object-Oriented Programming (OOP) ka ek core concept hai jisme alag-alag classes ke objects
+#  ek hi method ya function call ka alag-alag tareeke se jawab dete hain. 
+
+# Iske mukhya features ye hain:
+
+# Same Interface, Different Behavior: Aap ek hi function ko alag-alag objects ke saath use kar sakte hain, aur har object apne hisaab se output dega. Jaise, Dog aur Cat class dono ka speak() method ho sakta hai, par Dog "Bark" karega aur Cat "Meow". 
+# Duck Typing: Python mein types se zyada methods matter karte hain.  Agar koi object wo method provide karta hai jo aap chahte hain, toh Python use usi type ka maan leta hai (concept: "If it walks like a duck and quacks like a duck, it is a duck").
+# Flexibility aur Reusability: Ye code ko flexible banata hai taaki aap bina har baar type check kiye, alag-alag objects par same logic apply kar sakein. Isse code maintain karna aur extend karna aasaan ho jata hai. 
+
+# Polymorphism can be achieved in pytho in two ways well if we talk about compile time languages there are 3 ways but python does not support method overloading.
+# Method overloading means having same name methods inside a class but parameters will be different but in python the latest definition will overwrite the previous one.
+# Method Overriding 
+
+# This is where a child class overrides a method of the parent class.and python decides at runtime which method to call, based on the object type.
+
+# Method Overriding
+
+# * This is where a child class overrides a method of the parent class and python decides at runtime which method to call based on the object type.
+
+# class Animal:
+#    def show(self):
+#       print("hello i am sameer") # ye dekho ye print ni hua jo ki iska acess hai uske pas
+
+#    #mehtod overloading doesn't exist here.
+
+# class Human(Animal):
+#    def show(self):
+#       print("how are you") # aur ye print horha hai mtlb iska acess hai isi ko kahte hai method overriding
+
+# obj = Human()
+# obj.show()
+
+# ---DUCK TYPING---
+
+#Python follows the philosophy:
+# "if it walks like a duck and quacks like a duck", it must bea a duck."
+# In the speaks() function, we don't care if it's a duck or a human --we only care that the object has a talk() method.
+
+# class Duck:
+#    def talk(self):
+#         print("Quack!")
+
+# class Human:
+#    def talk(self):
+#        print("Hello!")
+
+# obj = Duck()
+# obj2 = Human()
+
+# class Animal:
+#     def show(self):
+#       print("I am showing")
+
+# class Human:
+#    def show(self):
+#       print("Hello I am also showing")
+
+# obj =Animal()
+# obj2 = Human()
+
+# obj.show()
+# obj2.show()
+
+# obj.talk()#ye show krega quack ko
+# obj2.talk()# ye show krega hello ko
+
+# ----ENCAPSULATION----
+
+# * Encapsulation means putting data(variables) and code(functions) together in one place - inside a class.
+# * It also means hiding the internal details of how things work. and only showing what is needed.
+# * It keeps data safe from being changed by mistake.
+# * It makes your code clean and easy to use.
+# * It gives control over what others can access or change.
+
+# Access modifiers in python
+
+# Access modifiers means how we give access of our attributes and methods to the object or inherited classes. There are 3types let see them one by one.
+# Public Attribute And Methods.
+# Till now every attribute and methods we have created are public means the inherited classes and objects can access them no matter what.
+
+# Protected attribute and methods.
+# python protected members are created using a single underscore but it still can be accessed from outside the class so you might wonder whats the point of using them.
+# Python doesn't enforce protected access like other
+
+
+# method aur attribute ko koi use na kar ske.
+# Python mein Encapsulation ek OOP (Object-Oriented Programming) concept hai jisme data (variables) aur methods ko ek single unit (class) mein bundle kiya jata hai.
+# Iska main purpose hai ki internal data ko hide kiya ja sake taaki bahar se usse directly access ya modify na kiya ja sake, sirf controlled methods ke through access mile. 
+
+# Isse implement karne ke liye Python mein Access Modifiers use hote hain:
+
+# Public Members: Variables/methods jo bina underscore ke hote hain aur kahin se bhi access kiye ja sakte hain (e.g., self.name). 
+# Protected Members: Inke naam ke aage single underscore (_) lagaya jata hai (e.g., self._project).  Ye mainly subclasses ke liye hote hain; outside access possible hai lekin recommended nahi hai. 
+# Private Members: Inke naam ke aage double underscore (__) lagaya jata hai (e.g., self.__balance).  Ye sirf class ke andar accessible hote hain.  Bahar se direct access karne par AttributeError aata hai.
+
+# class Factory:
+#     _a = "pune"
+
+#     def _show(self):
+#         print("hello i am a pune factory")
+
+# class Bhopal(Factory):
+#     def show2(self):
+#         print(super()._a)# python me protected ni rhta as compare to java.
+
+# obj = Bhopal()
+# obj.show2()
+
+# Private Attributes and Methods
+# It cannot be accessed from outside the class --only from inside the class where it is defined.
+# In python we use two underscores(__) before the name to make it privte.
+
+# class Demo:
+#     def __init__(self):
+#         self.name = "Public Member" # Public 
+#         self._age = 21 # Protected
+#         self.__salary = 50000   # Private
+
+#     def show(self):
+#      print("Inside the clas:")
+#      print("Public:", self.name)
+#      print("Protected:", self._age)
+#      print("Private:", self.__salary)
+
+# obj = Demo()
+# obj.__salary()
+
+# class Factory:
+#     __a = "pune" #__ iski wajah se private hojate hai object.
+
+#     def __show(self):
+#         print("hello i am a pune factory")
+
+# class Bhopal(Factory):
+#     def show2(self): # ni hua print kyuki protected hai 
+#         print(super().__a)# python me protected ni rhta as compare to java.
+
+# obj = Bhopal()
+# obj.show2()
+
+# class Factory:
+#     __a = "pune" #__ iski wajah se private hojate hai object.
+
+#     def show(self):
+#         print("Factory.__a")
+
+# obj = Factory()
+
+# obj.show()
+
+# ----ABSTRACTION----
+
+# * Abstraction does not exist in python but we can achieve it using a library we will see what is a library later.
+# * Abstraction is used to simplifying complex systems by focusing on essential features and hiding unnecessary details.
+# * It is used to define a common interface for different subclasses.
+# Abstraction Python mein Object-Oriented Programming (OOP) ka ek core concept hai jo complexity ko hide karke sirf essential details user ko dikhata hai
+# Iska main goal yeh hai ki user ko system ke background processes ya internal logic ki chinta na karni pade, bas functionality use karni ho. 
+# Isse samajhne ke liye do real-world examples dekh sakte hain:
+
+# Car Example: Jab aap car drive karte hain, to aap accelerator dabate hain speed badhane ke liye, lekin aapko engine ke andar kya ho raha hai, yeh samajhne ki zarurat nahi hoti. Yeh internal mechanism hide karna abstraction hai. 
+
+# Smartphone Example: Jab aap koi app use karte hain, to aapko hardware ya operating system ke complex operations ki parwah nahi hoti, bas output chahiye hota hai. 
+
+# Python mein Abstraction kaise implement hoti hai? Python mein abstraction achieve karne ke liye Abstract Classes aur Abstract Methods ka use kiya jata hai, jo abc module se import kiye jate hain. 
+
+# 1- Abstract Class: Ek aisa class jo instance (object) banana allow nahi karta aur jisme kam se kam ek abstract method ho. Ise create karne ke liye class ko ABC se inherit karna padta hai. 
+# 2- Abstract Method: Ek method jo sirf declared hota hai (signature hoti hai) lekin isme koi implementation (code body) nahi hoti. Isse @abstractmethod decorator se mark kiya jata hai. 
+
+# from abc import ABC, abstractmethod
+
+# class abstract(ABC):
+#     @abstractmethod
+#     def perimeter(self):
+#         pass
+    
+#     @abstractmethod
+#     def area(self):
+#         pass
+    
+# class Square(abstract):
+#     def __init__(self,side): # jaise ki maine class banai aur beech me chod dia bina pura kie isko complete krne ke lie abstraction ka use hota hai.
+#         self.side = side
+
+#     def perimeter(self):
+#         print("I have created")
+
+#     def area(self):
+#         print("I have created this ")
+    
+
+# class Circle(abstract):
+#     def __init__(self,radius):
+#         self.radius = radius
+
+#     def perimeter(self):
+#         print("I have created")
+
+#     def area(self):
+#         print("I have created this")
+    
+
+# obj = Circle(7)
+# obj2 = Square(4)
+
+# Abstract classes and methods.
+
+# Abstract classes are classes that contain one or more abstract methods.
+# A Method that is defined but not implemented in the abstract class. subclass must provide the implementation.
+ 
+# ----Dunder Methods----
+
+# Python mein dunder methods (jise magic methods bhi kaha jaata hai) woh special functions hote hain jo do underscores (__) se ghire hote hain, jaise __init__ ya __str__. 
+# Ye methods operator overloading enable karte hain, jisse aap apne custom classes ke saath Python ke built-in operators (jaise +, *) aur functions (jaise print()) ka use kar sakte hain. 
+
+# Ye methods Python interpreter ke saath ek contract ki tarah kaam karte hain; jab aap koi operation perform karte hain, toh Python automatically is methods ko call karta hai. 
+# For example, jab aap print(obj) karte hain, toh Python internally __str__() ya __repr__() method dhundhta hai object ki string representation nikalne ke liye. Agar aap + operator
+#  ka use karte hain, toh Python __add__() method ko invoke karta hai. 
+# Dunder metho are special methods in python that start and end with double underscores.like __init__,__str__,__add__,etc.
+# They automatically get called when you perform certain actions on an object.
+# They help you:
+# Customize behavior of your class.
+# Make your class objects behave like built-in data types like strings ,lists,etc.
+
+class Animal:
+   def __init__(self,name,age):
+       self.name = name
+       self.age = age
+
+   def __str__(self):
+       return f"hello how are you and your name is {self.name}" # object ko jab print krtaa hai directly acess krleta hai.
+    
+   def __add__(self,other):
+       sum = 0
+       for i in other:
+           sum = sum + i.age
+
+       return f"your sum of ages are {self.age + sum}"
+   
+obj = Animal("Lion",12)
+obj2 = Animal("dolphin",14)
+obj3 = Animal("tiger",34)
+
+print(obj + (obj2,obj3)) # obj 3 ko direct ni bhej sakte h tuple ki madad se bhej sakte ho.
