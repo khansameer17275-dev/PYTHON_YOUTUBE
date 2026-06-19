@@ -1901,23 +1901,163 @@ b = 12
 # Customize behavior of your class.
 # Make your class objects behave like built-in data types like strings ,lists,etc.
 
-class Animal:
-   def __init__(self,name,age):
-       self.name = name
-       self.age = age
+# class Animal:
+#    def __init__(self,name,age):
+#        self.name = name
+#        self.age = age
 
-   def __str__(self):
-       return f"hello how are you and your name is {self.name}" # object ko jab print krtaa hai directly acess krleta hai.
+#    def __str__(self):
+#        return f"hello how are you and your name is {self.name}" # object ko jab print krtaa hai directly acess krleta hai.
     
-   def __add__(self,other):
-       sum = 0
-       for i in other:
-           sum = sum + i.age
+#    def __add__(self,other):
+#        sum = 0
+#        for i in other:
+#            sum = sum + i.age
 
-       return f"your sum of ages are {self.age + sum}"
+#        return f"your sum of ages are {self.age + sum}"
    
-obj = Animal("Lion",12)
-obj2 = Animal("dolphin",14)
-obj3 = Animal("tiger",34)
+# obj = Animal("Lion",12)
+# obj2 = Animal("dolphin",14)
+# obj3 = Animal("tiger",34)
 
-print(obj + (obj2,obj3)) # obj 3 ko direct ni bhej sakte h tuple ki madad se bhej sakte ho.
+# print(obj + (obj2,obj3)) # obj 3 ko direct ni bhej sakte h tuple ki madad se bhej sakte ho.
+
+# __repr__ method
+# class String:
+#    def __init__(self, string):
+#        self.string = string
+
+#    def __repr__(self):
+#        return 'Object: {}'.format (self.string) # object ko jab print krtaa hai directly acess krleta hai.
+# # __repr__ method defines the official string representation of an object, primarily used for debugging. By default, it shows the type and memory address of the object.
+# if __name__ == '__main__':
+#     str1 = String('Hello')
+#     print(str1)
+
+# __repr__(self): Returns the official string representation of the object; used when printing or debugging.
+# str1 = String('Hello'): Creates an instance of String with 'Hello'.
+
+# 3- __add__method
+
+# __add__ method method defines how objects of a class are added together using the '+' operator. It allows operator overloading.
+# class String:
+    
+#     def __init__(self, string): # __init__(self, string): Initializes the object with a string.
+#         self.string = string 
+        
+#     def __repr__(self): # __repr__(self): Provides a readable string representation of the object for debugging.
+#         return 'Object: {}'.format(self.string)
+        
+#     def __add__(self, other): # __add__(self, other): Overloads the + operator to allow adding a string to the object’s string attribute
+#         return self.string + other
+    
+#     def __sub__(self, other):
+#         return self.string - other
+
+# if __name__ == '__main__':
+    
+#     string1 = String('Hello') # string1 + ' Geeks' – Calls __add__, returning 'Hello Geeks'.
+#     print(string1 + 'Greeks')
+
+# Let's learn about advance python concept.
+
+# ----DECORATOR----
+
+# 1-Python decorator ek aisa function hota hai jo kisi aur function ki behavior ko modify karta hai ya usme extra functionality add karta hai,
+#  bina us original function ko change kiye
+#2- Isse aap code ko reusable aur clean rakh sakte hain. 
+#3- A decorator is just a function that modifies another function without changing its actual code.
+#4- Imagine you have a cake (your function).A Decorator is like putting icing on the cake. it doesn't change the cake itself,but make it better,prettier or adds some new flavor!.
+# 5-For creating a decorator you first have to create a wraper.
+# 6-Its tough to understand with text see the video.
+# 7-Yahan decorators ko samajhne ke liye kuch key points hain:
+# 8-Simple Logic: Decorator basically ek function ko wrap karta hai.  Jab aap kisi function ko decorate karte hain, toh aap uske call hone se pehle aur baad mein kuch extra 
+# code run kar sakte hain (jaise logging, timing check, ya authentication).
+# 9-Syntax (@ symbol): Aap @decorator_name ka use karke kisi function ke upar decorator lagate hain. Yeh syntax sugar hai jo Python ko batata hai ki ye function ab is decorator se wrap ho gaya hai. 
+# 10-Building Blocks: Python decorators kaam karne ke liye nested functions (functions inside functions) aur closures ka use karte hain.  Decorator ek outer function hota hai jo ek inner wrapper function return karta hai.
+# 11-Common Use Cases: Inka use aksar logging, performance testing, caching, authorization checks, aur Flask/Django web frameworks mein routing ke liye kiya jata hai.
+#12- Class Decorators: Aap classes ko bhi decorate kar sakte hain, ya classes ko khud decorator ki tarah use kar sakte hain agar unme __call__ method ho. 
+#13- Example ke liye, agar aap chahte hain ki har function call hone se pehle ek message print ho, toh aap ek decorator bana sakte hain jo function ko execute karne se pehle print kare aur baad mein dobara print kare.
+#  Isse aapke har function ke liye alag-alag logging code likhne ki zaroorat nahi padti. 
+
+# Example
+
+# class Animal:
+#     @property # Decorator 
+#     def show(self):
+#         print("Hello how are you")
+
+# obj = Animal()
+
+# obj.show
+
+# def decorate(func):
+#     def wrapper():
+#         print("I will print myself before the function hello")
+#         func()
+#         print("I will print after the function")
+#     return wrapper
+
+
+# @decorate
+# def hello():
+#     print("hello I am sameer khan")
+
+# hello()
+
+# ---Example---
+# def decorate(func):
+#     def wrapper(a,b):
+#         print("the addition to your numbers are ")
+#         func(a,b)
+#         print("thankyou I hope you liked it ")
+#     return wrapper
+
+
+# @decorate
+# def addition(a,b): # Jo bhi aap except krte ho wrapper bhi except krega a,b
+#     print(f"your total is {a + b}")
+
+# addition(12,67)
+
+# ab agar addition 3 ya 4 numbers ka aata hai uske lie case scenario aata h ek advance hai
+# For making the decorator with Arguments it is tough for this we will move towards our next advance stuff "args". ''kwargs.
+
+# def addition(*args):
+#     sum = 0
+#     for i in args: # ye ek tuple ban gaya jitne no bhejna hai bhejte rho
+#         sum = sum + i
+
+#     print(sum)
+
+
+# addition(12,12,23,56,123,321,231) # kitne bhi number add krlo
+
+# ----KWARGS----
+
+# keyword ** se denote krte hai
+
+# def information(**kwargs):
+#     print("your information is\n\n ")
+#     for i in kwargs:
+#         print(f"{i} : {kwargs[i]}")
+
+
+# information(name = "Sameer", age = 23, designation = "AI/ML")
+
+# What is the use case of decorator args and kargs?
+
+# def decorate(func):
+#     def wrapper(*args,**kwargs):
+#         print("the addition to your numbers are ")
+#         func(*args,**kwargs)
+#         print("thankyou I hope you liked it ")
+#     return wrapper
+
+
+# @decorate
+# def addition(a,b,c,d,e): # Jo bhi aap except krte ho wrapper bhi except krega a,b
+#     print(f"your total is {a + b + c + d + e}") # ab aap kitne bhi number print krwake add kr sakte ho.
+
+# addition(12,67,123,121,21)
+
