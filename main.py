@@ -2061,3 +2061,161 @@ b = 12
 
 # addition(12,67,123,121,21)
 
+# List, Dictionary and set comprehension
+
+# * All of these comprehensions are used to create List,Dictionary and set.But you don't have to use multiple lines of code for loops and if-else statements.
+
+# Example
+# labels = ["Even" if x % 2 == 0 else "Odd" for x in range(5)]
+# # ['Even', 'Odd', 'Even', 'Odd', 'Even']
+
+# evens = {x: x*x for x in range(10) if x % 2 == 0}
+# # {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+
+# unique_even_squares = {x*x for x in range(10) if x % 2 == 0}
+# # {0, 4, 16, 36, 64}
+
+# hamne pahle seekha tha 
+
+#a = 13
+# a = int(input("Enter your number :- "))
+
+# print("even") if a%2 == 0 else print("Odd") # ek hi line saara kaam hogya. is tarike se
+
+# 1 se leke 20 tak print krna hoto
+
+# List comprehension example
+
+# l = [i for i in range(1,21) if i % 2==0] # isiko list comprehension kahte hai.
+
+# print(l)
+
+# Dictionary comprehension example
+# l = {i : i**2 for i in range(1,10)} # dictionary comprehension banadia
+
+# print(l)
+
+# SET comprehension
+
+# l = {x*x for x in range(10) if x % 2 == 0} # unique set  squares
+
+# print(l) # {0,64,4,36,16}
+
+#---LAMBDA FUNCTION---
+
+# A lambda function is an anonymous.inline function defined using the lambda keyword.
+# It's often used for short,simple function that are used only once or temporarly.
+# You can have multiple arguments but there will be only one expression.
+
+# Example 
+
+# def addition(a, b):
+#     print(a + b)
+
+# addition(12,13)
+# isi ka hi same hai par thoda easy way me by lambda method.
+# addition = lambda a,b : a + b # a + b intermediate a,b is a arguments
+
+# print(addition(12,13))
+
+# Example of square 
+# def square(x):
+#     print(x*x)
+
+# square(4)
+# ab isko lambda method se easy print kara sakte hai.
+# square = lambda x: x**2
+# print(square(5)) 
+
+# a = 15
+# print("even") if a%2==0 else print("Odd")
+
+# isse easy hai lambda method
+# check_even = lambda x: "Even" if x % 2 == 0 else "Odd" # lambda expression ko ek variables me krlena.
+# print(check_even(4)) # is tarike se aap check krsakte ho.
+
+# ----MAP,FILTER,ZIP
+# MAP---
+# Map is used for applying a function to multiple items.
+# Takes a list (or any sequence)
+# Applies the same function to every item in that list.
+# Gives you back a new list (in python 3,it gives a map object which you can convert to a list)
+# Use map()when you want to transform every item in a list.
+# it doesn't remove or skip items (that's what filter() does)
+# You can use it with lambda or normal functions.
+
+# numbers = [1, 2, 3, 4]
+# doubled = map( lambda x: x * 2, numbers)
+# print(list(doubled)) table of 2 run.
+
+# a = [1,2,3,4,5]
+
+# def double(x):
+#     return x *2
+
+# result = map(double,a)
+
+# print(list(result)) # is tarike se bhi kr sakte ho.
+
+# a = [1,2,3,4,5]
+
+# result = map(lambda x: x*2,a)
+
+# print(list(result)) # is tarike se mapping ki jaati h
+
+#----Filter---
+# Filter as the name suggest is used to filter out the stuff.
+# Takes a list (or other sequence)
+# Checks each item using a function (a test)
+# keeps only the items that pass the test. (i.e.. return True)
+
+# numbers = [1, 2, 3, 4, 5]
+# evens = filter(lambda x: x % 2 == 0, numbers)
+# print(list(evens)) # is tarike se filter ka use hua hai.
+
+# def even(x):
+#     if x %2 ==0: jaruri nai ki aap hamesha function hi create kro.
+#         return True
+#     else:
+#         return False
+    
+# a = [1,2,3,4,5,6,7,8,9]
+
+# result = filter(even , a) # is tarike se aap function create krke print karaoge.
+# result = filter(lambda x : True if x%2 == 0 else False , a)
+
+# print(list(result))
+
+
+# ----Modules and packages
+
+# module is just a single file containing code and we can use this file code in other file.
+# A single python file (.py)
+# Contains functions,variables or classes.
+# Used to organize and reuse code.
+# Python Comes with lots of ready-to-use modules like:
+  # math (for math operations)
+  # random (for generating random numbers)
+  # datetime (for date and time)
+# Python Modules are single .py files that contain functions, classes, or variables, allowing you to organize code and avoid namespace conflicts.
+# You can create a custom module by defining logic in a file (e.g., my_module.py) and importing it in another script using import my_module.
+# Python also includes built-in modules like math, os, and random which provide standard functionality without needing external installation. 
+# import math
+# print(math.sqrt(16))
+
+# import math # kisi dusri file ki cheezein isme use kr sakteho import aur from ki help se.
+
+# print(math.addition(12,12))#aese 100modules hai 
+
+# ----PACKAGES-----
+
+# Python packages are directories containing a collection of modules and a special __init__.py file that initializes the package.
+# They are used to organize code hierarchically, making large projects easier to manage and import. 
+
+#To create a package:
+
+# Create a directory with the desired package name.
+# Add an __init__.py file inside it (can be empty).
+# Add module files (.py) within the directory.
+
+# from modelss.model import hello,maths # import hogi unknoen file ko print krne me
